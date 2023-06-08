@@ -1,6 +1,6 @@
 package com.company0ne.firstproject
 
-import android.annotation.SuppressLint
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,12 +12,13 @@ class MainActivity : AppCompatActivity() {
      var countryNameList = ArrayList<String>()
     var detailsList = ArrayList<String>()
     var imageList = ArrayList<Int>()
-
     lateinit var adapter: CountriesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setTheme(R.style.Theme_FirstProject)
+
 
         recyclerView  = findViewById(R.id.recyclerView)
 
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         countryNameList.add("Brazil")
         countryNameList.add("Bouvat Island")
 
+
         //add some more details to see scrollView
         detailsList.add("This is Indian Flag")
         detailsList.add("This is Canada Flag")
@@ -46,9 +48,6 @@ class MainActivity : AppCompatActivity() {
         detailsList.add("This is Bouvat Island Flag")
 
 
-
-
-
         imageList.add(R.drawable.india)
         imageList.add(R.drawable.cananda)
         imageList.add(R.drawable.israel)
@@ -59,8 +58,6 @@ class MainActivity : AppCompatActivity() {
         imageList.add(R.drawable.turky)
         imageList.add(R.drawable.brazil)
         imageList.add(R.drawable.bouvet_island)
-
-
 
 
         adapter = CountriesAdapter(countryNameList,detailsList,imageList,this@MainActivity)
